@@ -1,6 +1,7 @@
 require './reportcard'
-class Student
 
+class Student
+  # Constructor accepts name and age attributes and creates an instance of Reportcard
   def initialize(name, age)
     @name = name
     @age = age

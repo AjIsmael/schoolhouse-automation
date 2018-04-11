@@ -1,4 +1,5 @@
 require 'faker'
+require 'pry'
 require './student'
 require './classroom'
 require './grade'
@@ -9,6 +10,7 @@ require './grade'
 @C = Classroom.new("1C")
 @D = Classroom.new("1D")
 
+# Create test students with grades in various subjects
 def genStudent
   s = Student.new(Faker::Name::name, rand(11..20))
   s.reportcard.addGrade(Grade.new("math", rand(0..100)))

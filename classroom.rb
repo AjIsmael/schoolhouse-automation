@@ -2,11 +2,13 @@ class Classroom
   attr_accessor :name
   attr_accessor :students
 
+  # Constructor takes a name attribute and creates a hash that stores students
   def initialize(name)
     @name = name
     @students = {}
   end
 
+  # Add student to students hash
   def addStudent(student)
     if @students[student.name]
       raise "Sorry, #{student} is already in here."
@@ -14,6 +16,7 @@ class Classroom
     @students.push(student)
   end
 
+  # Prints classroom roster
   def roster
     puts @name + " roster:"
     @students.each do |key, value|

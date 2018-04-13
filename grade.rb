@@ -1,8 +1,10 @@
+# Constructor takes subject and score attributes
+
 class Grade
   attr_accessor :subject, :score
 
   def initialize(subject, score)
-    @subject = subject,
+    @subject = subject
     @score = score
   end
 

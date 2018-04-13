@@ -1,8 +1,8 @@
 require 'faker'
 require 'pry'
-require './student'
-require './classroom'
-require './grade'
+require_relative 'student'
+require_relative 'classroom'
+require_relative 'grade'
 
 # Our four classrooms for the first years
 @A = Classroom.new("1A")
@@ -11,38 +11,38 @@ require './grade'
 @D = Classroom.new("1D")
 
 # Create test students with grades in various subjects
-def genStudent
-  s = Student.new(Faker::Name::name, rand(11..20))
-  s.reportcard.addGrade(Grade.new("math", rand(0..100)))
-  s.reportcard.addGrade(Grade.new("history", rand(0..100)))
-  s.reportcard.addGrade(Grade.new("english", rand(0..100)))
-  s.reportcard.addGrade(Grade.new("science", rand(0..100)))
+def generate_student
+  s = Student.new(Faker::Name.name, rand(11..20))
+  s.report_card.add_grade("math", rand(0..100))
+  s.report_card.add_grade("history", rand(0..100))
+  s.report_card.add_grade("english", rand(0..100))
+  s.report_card.add_grade("science", rand(0..100))
   s
 end
 
 # Generate our students
 1..25.times do |i|
-  @A.addStudent(genStudent())
+  @A.add_student(generate_student)
 end
 1..25.times do |i|
-  @B.addStudent(genStudent())
+  @B.add_student(generate_student)
 end
 1..25.times do |i|
-  @C.addStudent(genStudent())
+  @C.add_student(generate_student)
 end
 1..25.times do |i|
-  @D.addStudent(genStudent())
+  @D.add_student(generate_student)
 end
 
 # Check the rosters
-# @A.roster
-# puts ""
-# @B.roster
-# puts ""
-# @C.roster
-# puts ""
-# @D.roster
-# puts ""
+@A.roster
+puts ""
+@B.roster
+puts ""
+@C.roster
+puts ""
+@D.roster
+puts ""
 
 
 ############################################################

@@ -9,11 +9,11 @@ class Classroom
   end
 
   # Add student to students hash
-  def addStudent(student)
+  def add_student(student)
     if @students[student.name]
       raise "Sorry, #{student} is already in here."
     end
-    @students.push(student)
+    @students[student.name] = student
   end
 
   # Prints classroom roster

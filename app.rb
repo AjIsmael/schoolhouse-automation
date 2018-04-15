@@ -17,7 +17,6 @@ def generate_student
   s.report_card.add_grade("history", rand(0..100))
   s.report_card.add_grade("english", rand(0..100))
   s.report_card.add_grade("science", rand(0..100))
-  binding.pry
   s
 end
 
@@ -67,18 +66,18 @@ end
 
 ############################################################
 # CHALLENGE 2
-# def findExceptional(classroom)
-#   classroom.students.each { |key,value|
-#       total = 0
-#       value.reportcard.grade.map do |key, value|
-#         total = total + value.score
-#       end
-#       if total > 260:
-#         puts student.name
+def find_exceptional(classroom)
+  classroom.students.each { |key, value|
+    total = 0
+    value.report_card.grades.each do |key, value|
+      total = total + value
+    end
+    if total > 260
+      puts "#{value.name}"
+    end
+    }
+end
 
-#     }
-# end
-
-# findExceptional @B
+find_exceptional(@B)
 
 ############################################################

@@ -7,7 +7,7 @@ class Report_Card
     @grades = {}
   end
 
-  # Add subject grade to hash?
+  # Add subject grade to hash
   def add_grade(subject, score)
     grade = Grade.new(subject, score)
     if @grades[grade.subject]

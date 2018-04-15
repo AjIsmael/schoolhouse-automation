@@ -35,31 +35,34 @@ end
 end
 
 # Check the rosters
-@A.roster
-puts ""
-@B.roster
-puts ""
-@C.roster
-puts ""
-@D.roster
-puts ""
+# @A.roster
+# puts ""
+# @B.roster
+# puts ""
+# @C.roster
+# puts ""
+# @D.roster
+# puts ""
 
 
 ############################################################
 # CHALLENGE 1
 
-# def findFailing(classroom)
-#   classroom.students.each { |key,value|
-#     total = 0
-#     value.reportard.grades.each do |key, value|
-#       total = total + value.grade
-#     end
-#     if total > 200:
-#       puts "PASS"
-#   }
-# end
+def find_failing(classroom)
+  classroom.students.each { |key, value|
+    total = 0
+    value.report_card.grades.each do |key, value|
+      total = total + value
+    end
+    if total > 200
+      puts "#{value.name}: PASS"
+    else
+      puts "#{value.name}: FAIL"
+    end
+    }
+end
 
-# findFailing @A
+find_failing(@A)
 
 ############################################################
 # CHALLENGE 2

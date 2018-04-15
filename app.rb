@@ -17,6 +17,7 @@ def generate_student
   s.report_card.add_grade("history", rand(0..100))
   s.report_card.add_grade("english", rand(0..100))
   s.report_card.add_grade("science", rand(0..100))
+  binding.pry
   s
 end
 
@@ -62,7 +63,7 @@ def find_failing(classroom)
     }
 end
 
-find_failing(@A)
+# find_failing(@A)
 
 ############################################################
 # CHALLENGE 2

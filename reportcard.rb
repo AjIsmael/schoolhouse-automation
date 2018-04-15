@@ -19,8 +19,7 @@ class Report_Card
   # Prints out each element of grades hash
   def print_card
     @grades.each do |subject, score|
-      # TODO: FIXXXXXX
-      puts "Subject: #{subject} - #{grade.score}"
+      puts "#{subject.capitalize}: #{score}"
     end
   end
 

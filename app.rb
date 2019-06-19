@@ -62,7 +62,7 @@ def find_failing(classroom)
     }
 end
 
-# find_failing(@A)
+find_failing(@A) #uncommented this line
 
 ############################################################
 # CHALLENGE 2
@@ -73,11 +73,12 @@ def find_exceptional(classroom)
       total = total + value
     end
     if total > 260
-      puts "#{value.name}"
+      puts "#{value.name}: Exceptional" #added a string for replying for people who have greater than 260
     end
     }
+    puts ""
 end
 
-find_exceptional(@B)
+find_exceptional(@B)  #uncommented this line
 
 ############################################################

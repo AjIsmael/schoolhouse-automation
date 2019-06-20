@@ -1,3 +1,4 @@
+# define a class and describe what a Classroom incorporates
 class Classroom
   attr_accessor :name
   attr_accessor :students

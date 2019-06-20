@@ -1,5 +1,6 @@
 require_relative 'reportcard'
 
+#defines a student object and what description a student will have.
 class Student
   attr_accessor :name, :age, :report_card
 

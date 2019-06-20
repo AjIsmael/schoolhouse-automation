@@ -12,15 +12,15 @@ require_relative 'grade'
 
 # Create test students with grades in various subjects
 def generate_student
-  s = Student.new(Faker::Name.name, rand(11..20))
-  s.report_card.add_grade("math", rand(0..100))
-  s.report_card.add_grade("history", rand(0..100))
-  s.report_card.add_grade("english", rand(0..100))
-  s.report_card.add_grade("science", rand(0..100))
-  s
+  student = Student.new(Faker::Name.name, rand(11..20))
+  student.report_card.add_grade("math", rand(0..100))
+  student.report_card.add_grade("history", rand(0..100))
+  student.report_card.add_grade("english", rand(0..100))
+  student.report_card.add_grade("science", rand(0..100))
+  return student # returns the student created with its grade
 end
 
-# Generate our students
+# Generate our students in each section
 1..25.times do |i|
   @A.add_student(generate_student)
 end
@@ -34,20 +34,7 @@ end
   @D.add_student(generate_student)
 end
 
-# Check the rosters
-# @A.roster
-# puts ""
-# @B.roster
-# puts ""
-# @C.roster
-# puts ""
-# @D.roster
-# puts ""
-
-
-############################################################
-# CHALLENGE 1
-
+# a function to find the pass or fail grade for students in a particular classroom
 def find_failing(classroom)
   classroom.students.each { |key, value|
     total = 0
@@ -60,12 +47,12 @@ def find_failing(classroom)
       puts "#{value.name}: FAIL"
     end
     }
+    puts ""
 end
 
-find_failing(@A) #uncommented this line
+find_failing(@A) #trial on classroom A
 
-############################################################
-# CHALLENGE 2
+# a function to find students who got exceptional grade in a classroom
 def find_exceptional(classroom)
   classroom.students.each { |key, value|
     total = 0
@@ -79,6 +66,4 @@ def find_exceptional(classroom)
     puts ""
 end
 
-find_exceptional(@B)  #uncommented this line
-
-############################################################
+find_exceptional(@B)  #trial on classroom B
